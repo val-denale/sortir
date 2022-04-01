@@ -3,25 +3,26 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="#">Logo Sortir.com</a>
-
+        <a class="navbar-brand" href="{{ path('home') }}">Logo Sortir.com</a>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Accueil</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Villes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Campus</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Mon profil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Se déconnecter</a>
-                </li>
+                {% if app.user %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Villes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Campus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mon profil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_logout') }}">Se déconnecter</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
